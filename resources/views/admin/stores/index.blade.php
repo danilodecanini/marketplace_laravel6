@@ -2,7 +2,7 @@
 
 
 @section('content')
-<a href="{{route('admin.stores.create')}}" class="btn btn-warning">Cadastrar</a>
+<a href="{{route('admin.stores.create')}}" class="btn btn-warning mb-1">Cadastrar</a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -17,8 +17,14 @@
             <td>{{$store->id}}</td>
             <td>{{$store->name}}</td>
             <td>
-                <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-info">Editar</a>
-                <a href="{{route('admin.stores.destroy', ['store' => $store->id])}}" class="btn btn-sm btn-danger">Excluir</a>
+                <div class="btn-group">
+                    <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-info mr-1">Editar</a>
+                    <form action="{{route('admin.stores.destroy', ['store' => $store->id])}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button class="btn btn-sm btn-danger" type="submit">Excluir</button>
+                    </form>
+                </div>
             </td>
         </tr>
         @endforeach

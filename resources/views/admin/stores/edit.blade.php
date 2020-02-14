@@ -2,9 +2,9 @@
 
 @section('content')
 <h1>Atualizar Loja</h1>
-<form action="{{route('admin.stores.store', ['store' => $store->id])}}" method="POST">
-    @method('POST')
+<form action="{{route('admin.stores.update', ['store' => $store->id])}}" method="POST">
     @csrf
+    @method("PUT")
     <div class="form-group">
         <label for="name">Nome da Loja</label>
         <input type="text" name="name" id="name" class="form-control" value="{{$store->name}}">

@@ -25,7 +25,8 @@ class StoreController extends Controller
     {
         $data = $request->all();
 
-        $user = \App\User::find($data['user']);
+        $user = auth()->user();
+
         $store = $user->stores()->create($data);
 
         flash('Loja criada com sucesso!')->success();
@@ -34,7 +35,7 @@ class StoreController extends Controller
 
     public function edit($store)
     {
-        $store = \App\Store::find($store);
+        $store = \App\Store::findOrFail($store);
 
         return view('admin.stores.edit', compact('store'));
     }
