@@ -27,6 +27,9 @@
                     <li class="nav-item @if(request()->is('admin/products*')) active @endif">
                         <a class="nav-link" href="{{route('admin.products.index')}}">Produtos @if(request()->is('admin/products')) <span class="sr-only">(current)</span> @endif </a>
                     </li>
+                    <li class="nav-item @if(request()->is('admin/categories*')) active @endif">
+                        <a class="nav-link" href="{{route('admin.categories.index')}}">Categorias @if(request()->is('admin/categories')) <span class="sr-only">(current)</span> @endif </a>
+                    </li>
                 </ul>
                 <div class="my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">

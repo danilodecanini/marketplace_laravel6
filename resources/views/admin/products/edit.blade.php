@@ -50,6 +50,17 @@
     </div>
 
     <div class="form-group">
+        <label for="categories">Categorias</label>
+        <select name="categories[]" id="categories" class="form-control" multiple>
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}"
+                    @if ($product->categories->contains($category)) selected="true" @endif
+                >{{$category->name}}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group">
         <label for="slug">Slug</label>
         <input type="text" name="slug" id="slug" class="form-control" value="{{$product->slug}}">
     </div>

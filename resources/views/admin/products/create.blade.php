@@ -5,7 +5,7 @@
 <form action="{{route('admin.products.store')}}" method="POST">
     @csrf
     <div class="form-group">
-        <label for="name">Nome da Loja</label>
+        <label for="name">Nome do Produto</label>
         <input type="text" name="name" id="name" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror">
 
         @error('name')
@@ -46,6 +46,15 @@
                 {{$message}}
             </div>
         @enderror
+    </div>
+
+    <div class="form-group">
+        <label for="categories">Categorias</label>
+        <select name="categories[]" id="categories" class="form-control" multiple>
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
     </div>
 
     <div class="form-group">
