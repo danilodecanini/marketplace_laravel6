@@ -5,7 +5,7 @@
 
 @if (!$store)
     <a href="{{route('admin.stores.create')}}" class="btn btn-warning mb-1">Cadastrar</a>
-@endif
+@else
 <table class="table table-striped">
     <thead>
         <tr>
@@ -35,5 +35,6 @@
         @endif
     </tbody>
 </table>
+@endif
 
 @endsection
