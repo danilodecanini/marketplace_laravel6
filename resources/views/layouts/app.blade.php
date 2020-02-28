@@ -21,8 +21,11 @@
             @auth
 
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item @if(request()->is('admin/orders*')) active @endif">
+                        <a class="nav-link" href="{{route('admin.orders.my')}}">Meus Pedidos @if(request()->is('admin/stores')) <span class="sr-only">(current)</span> @endif </a>
+                    </li>
                     <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
-                        <a class="nav-link" href="{{route('admin.stores.index')}}">Lojas @if(request()->is('admin/stores')) <span class="sr-only">(current)</span> @endif </a>
+                        <a class="nav-link" href="{{route('admin.stores.index')}}">Loja @if(request()->is('admin/stores')) <span class="sr-only">(current)</span> @endif </a>
                     </li>
                     <li class="nav-item @if(request()->is('admin/products*')) active @endif">
                         <a class="nav-link" href="{{route('admin.products.index')}}">Produtos @if(request()->is('admin/products')) <span class="sr-only">(current)</span> @endif </a>
@@ -53,6 +56,10 @@
         @yield('content')
     </div>
 
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+			  crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
 

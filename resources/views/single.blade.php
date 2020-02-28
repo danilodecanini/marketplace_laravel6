@@ -14,7 +14,7 @@
                     </div>
                 </div>
             @else
-                <img src="{{asset('storage/'. $product->photos->first()->image)}}" class="card-img-top" alt="{{$product->name}}">
+                <img src="{{asset('assets/img/no-photo.jpg')}}" class="card-img-top" alt="Sem Foto">
             @endif
         </div>
         <div class="col-4">
