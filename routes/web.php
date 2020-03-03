@@ -40,6 +40,10 @@ Route::group(['middleware' => ['auth'] ], function(){
 
     Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function(){
 
+        Route::get('notifications', 'NotificationController@notifications')->name('notifications.index');
+        Route::get('notifications/read-all', 'NotificationController@readAll')->name('notifications.read.all');
+        Route::get('notifications/read/{notification}', 'NotificationController@read')->name('notifications.read');
+
         Route::resource('stores', 'StoreController');
         Route::resource('products', 'ProductsController');
         Route::resource('categories', 'CategoryController');
