@@ -73,3 +73,10 @@
 </form>
 
 @endsection
+
+@section('scripts')
+    <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
+    <script>
+        $('#price').maskMoney({prefix: 'R$', allowNegative: false, thousands: '.', decimal: ','});
+    </script>
+@endsection

@@ -65,3 +65,14 @@
 </form>
 
 @endsection
+
+@section('scripts')
+    <script>
+
+        let imPhone = new Inputmask('(99) 9999-9999');
+        imPhone.mask(document.getElementById('phone'));
+
+        let imMobilePhone = new Inputmask('(99) 99999-9999');
+        imMobilePhone.mask(document.getElementById('mobile_phone'));
+    </script>
+@endsection

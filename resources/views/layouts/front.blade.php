@@ -45,7 +45,13 @@
                     @auth
                         <li class="nav-item @if(request()->is('/my-orders')) active @endif">
                             <a href="{{route('user.orders')}}" class="nav-link">Meus Pedidos</a>
-                        </li>                        
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('form.logout').submit();">Sair</a>
+                            <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
+                                @csrf
+                            </form>
+                        </li>
                     @endauth
                     <li class="nav-item">
                         <a href="{{route('cart.index')}}" class="nav-link">
@@ -65,10 +71,7 @@
         @include('flash::message')
         @yield('content')
     </div>
-    <script
-			  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-			  crossorigin="anonymous"></script>
+
     <script src="{{asset('js/app.js')}}"></script>
     @yield('scripts')
 </body>

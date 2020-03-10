@@ -6,8 +6,6 @@ trait UploadTrait
 {
     public function imageUpload($images, $imageColumn = null)
     {
-
-
         $uploadedImages = [];
 
         if (!is_null($imageColumn)) {
