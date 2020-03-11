@@ -64,6 +64,6 @@ class StoreReceiveNewOrder extends Notification
     {
         return (new NexmoMessage)
             ->from('5544997338666')
-            ->content('Você recebeu um novo pedido em nosso site');
+            ->content('Voce recebeu um novo pedido em nosso site, por favor verifique!');
     }
 }

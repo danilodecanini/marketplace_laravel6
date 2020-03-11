@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function routeNotificationForNexmo($notification)
     {
-        $storeMobilePhoneNumber = trim(str_replace(['(', ')', ' ', '-'], '', $this->store->mobile_phone));
+        $storeMobilePhoneNumber = trim(str_replace(['(', ')', ' ', '-'], '', $this->stores->mobile_phone));
         return '55' . $storeMobilePhoneNumber;
     }
 }
